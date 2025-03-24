@@ -1,6 +1,6 @@
-import { Agent as CoreAgent, AgentConfig as CoreAgentConfig, AgentMetadata, GenerateObjectResult, GenerateTextResult, StreamObjectResult, StreamTextResult, AiMessageType, a2 } from '../../../a2/dist';
+import { Agent as CoreAgent, AgentConfig as CoreAgentConfig, AgentMetadata, GenerateObjectResult, GenerateTextResult, StreamObjectResult, StreamTextResult, AiMessageType, a2 } from '@a2/core';
 import type { ZodSchema } from 'zod';
-import type { JSONSchema7 } from '../../../a2/dist';
+import type { JSONSchema7 } from 'json-schema';
 
 // Import provider-specific models to support string-based model creation
 let openaiModule: any, anthropicModule: any;

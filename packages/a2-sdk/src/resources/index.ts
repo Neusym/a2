@@ -1,4 +1,4 @@
-import { DefaultResourceManager } from '../../../a2/dist';
+import { DefaultResourceManager } from '@a2/core';
 import { z } from 'zod';
 
 /**

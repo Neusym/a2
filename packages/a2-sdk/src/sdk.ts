@@ -1,4 +1,4 @@
-import { a2, CoreComponent, ComponentConfig, RegisteredLogger } from '../../a2/dist';
+import { a2, CoreComponent, ComponentConfig, RegisteredLogger } from '@a2/core';
 import { createAgent } from './agents';
 import { createProcess } from './processes';
 import { createWorkflow } from './workflows';

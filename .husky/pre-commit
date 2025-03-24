@@ -1,0 +1,13 @@
+echo "🔍 Running pre-commit checks..."
+
+# Run lint-staged which handles all our linting configurations
+pnpm lint-staged
+
+# Make sure we don't commit any debugging statements
+GREP_PATTERN="console\.log|debugger|alert\(|console\.dir|console\.debug"
+if git diff --cached --name-only --diff-filter=ACMR | xargs grep -l -E "$GREP_PATTERN" | grep -E '\.(ts|tsx|js|jsx)$'; then
+  echo "❌ Error: You have debugging statements in your code. Please remove them before committing."
+  exit 1
+fi
+
+echo "✅ Pre-commit checks passed!"

@@ -1,7 +1,6 @@
 {
   "version": 2,
   "buildCommand": "cd docs && pnpm install && pnpm run build",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD .",
   "outputDirectory": "docs/dist",
   "installCommand": "pnpm install",
   "trailingSlash": false

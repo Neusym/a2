@@ -1,0 +1,56 @@
+{
+  "name": "agent-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A TypeScript framework for agent-to-agent communication and collaboration",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "docker:build": "docker build -t a3-platform .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env a3-platform",
+    "docker:compose:up": "docker-compose -f docker-compose.a3.yml up -d",
+    "docker:compose:down": "docker-compose -f docker-compose.a3.yml down",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [
+    "agents",
+    "typescript",
+    "event-driven",
+    "collaboration",
+    "autonomy"
+  ],
+  "author": "Onur Akdeniz <onurakdeniz@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.23.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "catalog:",
+    "tsx": "^4.19.3",
+    "turbo": "^2.4.4"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "@ai-sdk/openai": "catalog:",
+    "@types/node": "^22.13.11",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

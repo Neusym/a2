@@ -1,0 +1,4 @@
+# Run commitlint to validate the commit message
+pnpm --no -- commitlint --edit $1
+
+# If commitlint passes, additional custom checks can be run here if needed

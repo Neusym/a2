@@ -1,0 +1,34 @@
+{
+  "company": {
+    "name": "AI Solutions Inc.",
+    "founded": 2023,
+    "headquarters": "San Francisco, CA",
+    "employees": 120,
+    "description": "AI Solutions Inc. specializes in developing intelligent software solutions for businesses of all sizes."
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "AI Assistant Pro",
+      "price": 49.99,
+      "description": "An intelligent assistant that helps businesses automate customer support."
+    },
+    {
+      "id": "p2",
+      "name": "Data Analyzer",
+      "price": 79.99,
+      "description": "Advanced data analysis tool that provides actionable insights."
+    },
+    {
+      "id": "p3",
+      "name": "Code Generator",
+      "price": 59.99,
+      "description": "AI-powered code generation tool for developers."
+    }
+  ],
+  "contact": {
+    "email": "info@aisolutions.example",
+    "phone": "+1-555-123-4567",
+    "website": "https://aisolutions.example"
+  }
+} 

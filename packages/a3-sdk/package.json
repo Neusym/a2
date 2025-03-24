@@ -1,0 +1,42 @@
+{
+  "name": "@a3/sdk",
+  "version": "0.1.0",
+  "description": "SDK for interacting with the A3 platform on Aptos",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dev": "tsc --watch",
+    "lint": "eslint src --ext .ts",
+    "test": "jest",
+    "test:integration": "ts-node examples/integration-example.ts"
+  },
+  "keywords": [
+    "a3",
+    "aptos",
+    "blockchain",
+    "sdk",
+    "agents"
+  ],
+  "author": "Onur Akdeniz <onurakdeniz@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.13.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@a3/platform": "workspace:*"
+  }
+}

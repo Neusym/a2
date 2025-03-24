@@ -1,5 +1,3 @@
-import { Process } from '../../../a2/dist/process';
-
 /**
  * Type for a process step execution function
  */
@@ -18,17 +16,17 @@ export interface ProcessStep {
    * Unique identifier for the step
    */
   id: string;
-  
+
   /**
    * Function to execute for this step
    */
   execute: ProcessStepFunction;
-  
+
   /**
    * Optional condition to determine if this step should run
    */
   condition?: ProcessStepCondition;
-  
+
   /**
    * Description of what this step does
    */
@@ -43,12 +41,12 @@ export interface CreateProcessOptions {
    * Name of the process
    */
   name: string;
-  
+
   /**
    * Array of steps in the process
    */
   steps: ProcessStep[];
-  
+
   /**
    * Description of what this process does
    */
@@ -63,17 +61,17 @@ export interface SimpleProcess {
    * Process name
    */
   name: string;
-  
+
   /**
    * Process description
    */
   description?: string;
-  
+
   /**
    * Process steps
    */
   steps: ProcessStep[];
-  
+
   /**
    * Run the process with the given input
    */
@@ -82,7 +80,7 @@ export interface SimpleProcess {
 
 /**
  * Create a process with simplified options
- * 
+ *
  * @example
  * ```typescript
  * const process = createProcess({
@@ -104,32 +102,26 @@ export interface SimpleProcess {
  *     }
  *   ]
  * });
- * 
+ *
  * const result = await process.run({ name: 'John' });
- * console.log(result.output); // { greeting: "Hello, John!" }
+ * // Result contains: { greeting: "Hello, John!" }
  * ```
- * 
+ *
  * @param options Options for creating the process
  * @returns A new Process instance
  */
 export function createProcess(options: CreateProcessOptions): SimpleProcess {
   const { name, steps, description } = options;
-  
-  // Map the steps by ID for easy access
-  const stepsMap = steps.reduce((acc, step) => {
-    acc[step.id] = step;
-    return acc;
-  }, {} as Record<string, ProcessStep>);
-  
+
   return {
     name,
     description,
     steps,
-    
+
     async run(input: any): Promise<{ output: any }> {
       // Store step results
       const stepResults: Record<string, any> = {};
-      
+
       // Create context object for steps to use
       const context = {
         getInput(key?: string) {
@@ -143,37 +135,37 @@ export function createProcess(options: CreateProcessOptions): SimpleProcess {
         },
         getAllResults() {
           return { ...stepResults };
-        }
+        },
       };
-      
+
       // Execute each step in order
       for (const step of steps) {
         // Check if step should be executed
         if (step.condition && !step.condition(context)) {
           continue;
         }
-        
+
         // Execute the step and store its result
         const result = await step.execute(context);
         stepResults[step.id] = result;
       }
-      
+
       // If we have steps, return the result of the last one
       if (steps.length > 0) {
-        return { 
-          output: stepResults[steps[steps.length - 1].id] 
+        return {
+          output: stepResults[steps[steps.length - 1].id],
         };
       }
-      
+
       // Otherwise return empty result
       return { output: {} };
-    }
+    },
   };
 }
 
 /**
  * Create a sequential process where each step depends on the previous one
- * 
+ *
  * @param options Process options without the steps
  * @param stepFunctions Array of step functions in order
  * @returns A new Process instance
@@ -185,11 +177,11 @@ export function createSequentialProcess(
   // Create step objects with auto-generated IDs
   const steps = stepFunctions.map((fn, index) => ({
     id: `step-${index + 1}`,
-    execute: fn
+    execute: fn,
   }));
-  
+
   return createProcess({
     ...options,
-    steps
+    steps,
   });
-} 
+}

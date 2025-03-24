@@ -1,4 +1,3 @@
-import { DefaultResourceManager } from '../../../a2/dist';
 import { z } from 'zod';
 
 /**

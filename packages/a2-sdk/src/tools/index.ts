@@ -1,4 +1,4 @@
-import { createTool as coreCreateTool, ToolRegistry } from '../../../a2/dist';
+import { createTool as coreCreateTool, ToolRegistry } from '@a2/core';
 import { z } from 'zod';
 
 /**

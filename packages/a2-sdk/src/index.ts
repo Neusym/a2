@@ -25,4 +25,4 @@ export {
   AgentGenerateOptions,
   AgentStreamOptions,
   LogLevel
-} from '../../a2/dist'; 
+} from '@a2/core'; 

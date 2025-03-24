@@ -4,6 +4,11 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	image: {
+		service: {
+			entrypoint: 'astro/assets/services/noop'
+		},
+	},
 	integrations: [
 		starlight({
 			title: 'Neusym Docs',
@@ -16,8 +21,7 @@ export default defineConfig({
 					label: 'Getting Started',
 					items: [
 						{ label: 'Introduction', slug: 'introduction' },
-						{ label: 'Installation', slug: 'installation' },
-						{ label: 'Quick Start', slug: 'quick-start' },
+				 
 					],
 				},
 				{

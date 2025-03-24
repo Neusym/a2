@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd docs && pnpm install --no-frozen-lockfile && pnpm run build",
+  "buildCommand": "cd docs && pnpm install --no-frozen-lockfile astro @astrojs/starlight && pnpm run build",
   "outputDirectory": "docs/dist",
   "installCommand": "pnpm install",
   "trailingSlash": false

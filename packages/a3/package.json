@@ -1,0 +1,65 @@
+{
+  "name": "@a3/platform",
+  "version": "0.1.0",
+  "description": "a3 platform - Extensions to a2 with platform capabilities including service discovery",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "a3": "dist/bin/a3.js",
+    "a3-register-process": "dist/register-process.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node server.ts",
+    "test": "jest",
+    "lint": "eslint 'src/**/*.ts'",
+    "cli": "ts-node src/bin/a3.ts",
+    "aptos:setup": "ts-node src/discovery/aptos/setup.ts",
+    "aptos:deploy": "ts-node src/discovery/aptos/deploy-contract.ts",
+    "aptos:test": "ts-node src/discovery/aptos/test-contract.ts",
+    "aptos:example": "ts-node src/discovery/aptos/example-client.ts",
+    "aptos:process-example": "ts-node src/examples/aptos-process-example.ts"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "platform",
+    "discovery",
+    "aptos",
+    "blockchain",
+    "typescript"
+  ],
+  "author": "Onur Akdeniz <onurakdeniz@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.36.0",
+    "aptos": "^1.21.0",
+    "axios": "^1.8.4",
+    "commander": "^13.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "catalog:",
+    "express": "^4.18.2",
+    "inquirer": "^12.5.0",
+    "uuid": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/node": "catalog:",
+    "@types/uuid": "^9.0.7",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "jest": "catalog:",
+    "prettier": "catalog:",
+    "ts-jest": "catalog:",
+    "ts-node": "^10.9.2",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

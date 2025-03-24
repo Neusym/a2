@@ -1,4 +1,3 @@
-import { DefaultResourceManager } from '@a2/core';
 import { z } from 'zod';
 
 /**

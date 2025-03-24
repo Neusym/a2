@@ -1,10 +1,11 @@
 import { a2, CoreComponent, ComponentConfig, RegisteredLogger } from '@a2/core';
+
 import { createAgent } from './agents';
-import { createProcess } from './processes';
-import { createWorkflow } from './workflows';
 import { createMemory } from './memory';
-import { createTool } from './tools';
+import { createProcess } from './processes';
 import { createResource } from './resources';
+import { createTool } from './tools';
+import { createWorkflow } from './workflows';
 
 /**
  * Configuration options for the A2SDK

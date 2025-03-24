@@ -1,0 +1,23 @@
+# Exclude node_modules
+node_modules
+**/node_modules
+
+# Exclude build artifacts
+dist
+**/dist
+.turbo
+
+# Exclude development files
+.git
+.github
+.vscode
+**/.DS_Store
+*.log
+
+# Exclude environment files (except .env.example)
+**/.env*
+!**/.env.example
+
+# Exclude any private keys
+**/*.pem
+**/aptos-key.txt 

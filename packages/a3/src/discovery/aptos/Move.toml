@@ -1,0 +1,15 @@
+[package]
+name = "ProcessRegistry"
+version = "1.0.0"
+authors = ["a3 Team"]
+
+[addresses]
+process_registry = "_"
+
+[dev-addresses]
+process_registry = "0x1"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "mainnet" }
+
+[dev-dependencies] 

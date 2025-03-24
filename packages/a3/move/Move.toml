@@ -1,0 +1,10 @@
+[package]
+name = "a3"
+version = "0.1.0"
+authors = ["A3 Team"]
+
+[addresses]
+a3 = "_" # This will be replaced during deployment with the actual address
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "main" } 

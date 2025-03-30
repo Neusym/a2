@@ -1,0 +1,56 @@
+{
+  "name": "agent-bus-serverless",
+  "version": "0.1.0",
+  "description": "Agent Bus - Serverless",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "node api/server.js",
+    "dev:standalone": "ts-node src/index.ts",
+    "dev:all": "ts-node startServers.ts",
+    "dev:api": "ts-node startRegularServer.ts",
+    "build": "tsc",
+    "start": "node dist/api/[[...route]].js",
+    "start:all": "node dist/startServers.js",
+    "start:api": "node dist/startRegularServer.js",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "test-client": "node scripts/test-client.mjs",
+    "dev:vercel": "vercel dev"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.3.4",
+    "@anthropic-ai/sdk": "^0.18.0",
+    "@hono/node-server": "^1.14.0",
+    "@hono/zod-validator": "^0.4.3",
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "@pinecone-database/pinecone": "^2.0.1",
+    "@upstash/qstash": "^2.6.0",
+    "@upstash/redis": "^1.28.4",
+    "@vercel/blob": "^0.22.1",
+    "ai": "^4.2.8",
+    "ajv": "^8.17.1",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.5",
+    "hono": "^4.1.5",
+    "openai": "^4.90.0",
+    "pg": "^8.14.1",
+    "pino": "^8.19.0",
+    "pino-pretty": "^10.3.1",
+    "postgres": "^3.4.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/pg": "^8.11.11",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "eslint": "^8.57.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3",
+    "vercel": "^33.5.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

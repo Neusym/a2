@@ -1,0 +1,21 @@
+{
+  "name": "mcp-server-integration",
+  "version": "1.0.0",
+  "description": "MCP Server integration for the task clarification agent",
+  "private": true,
+  "scripts": {
+    "test-client": "node scripts/test-client.mjs",
+    "dev": "ts-node api/server.ts",
+    "dev:vercel": "vercel dev"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "@upstash/redis": "^1.28.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.2"
+  }
+}

@@ -12,7 +12,7 @@
   "dependencies": {
     "rehype-mermaid": "2.0.1",
     "remark-mermaidjs": "^7.0.0",
-    "sharp": "^0.32.5"
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@astrojs/starlight": "^0.32.4",

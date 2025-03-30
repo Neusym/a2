@@ -64,3 +64,4 @@ tsconfig.tsbuildinfo
 .eslintcache
 .stylelintcache
 .vercel 
+.vercel

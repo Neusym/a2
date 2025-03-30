@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "src/agent-bus/integrations/mcp-server/api/server.ts": {
+      "maxDuration": 60
+    }
+  }
+}

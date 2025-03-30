@@ -1,0 +1,1 @@
+export * from './registry.client'; // Export interface and class 
